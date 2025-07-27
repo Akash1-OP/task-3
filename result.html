@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz Result</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Quiz Result</h1>
+    <h2>Quiz complete</h2>
+    <div id="result-box">
+      <p id="score">Calculating your score...</p>
+      <div class="result-buttons">
+        <a href="index.html"><button>Retry Quiz</button></a>
+        <a href="jokes.html"><button>Get a Joke</button></a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const score = localStorage.getItem("quizScore") || 0;
+    const total = localStorage.getItem("totalQuestions") || 0;
+    document.getElementById("score").textContent = `You scored ${score} out of ${total}`;
+  </script>
+</body>
+</html>

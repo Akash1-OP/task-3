@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Random Dev Joke</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Random Developer Joke</h1>
+    <p id="joke">Loading joke...</p>
+    <div class="footer-links">
+      <a href="index.html"><button>Back to Quiz</button></a>
+    </div>
+  </div>
+  <script>
+    async function getJoke() {
+      const res = await fetch("https://v2.jokeapi.dev/joke/Programming?type=single");
+      const data = await res.json();
+      document.getElementById("joke").innerText = data.joke || "No joke found!";
+    }
+    window.onload = getJoke;
+  </script>
+</body>
+</html>
